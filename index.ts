@@ -75,7 +75,7 @@ const app = Fastify({
 await ensureBuild();
 
 await app.register(fastifyHelmet, {
-  crossOriginEmbedderPolicy: { policy: 'require-corp' },
+  crossOriginEmbedderPolicy: { policy: 'credentialless' }, // Like Space: require-corp blocks some cross-origin assets.
   crossOriginOpenerPolicy: { policy: 'same-origin' },
   contentSecurityPolicy: false,
   xPoweredBy: false,
